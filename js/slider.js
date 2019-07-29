@@ -1,7 +1,7 @@
-window.onload = function () {
+window.addEventListener('load', function () {
 var image = document.getElementById("slider");
-const imagePath = 'img/';
-var backgrounds = ['apartament.jpg', 'kitchen.jpg', 'floor.jpg', 'home.jpg', 'apartament-2.jpg'];
+var imagePath = 'img/';
+var backgrounds = ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg', 'image6.jpg'];
  
 var i = 0;
 function changeImg() {
@@ -10,7 +10,6 @@ image.style.backgroundImage = `url(${imagePath}${backgrounds[i]})`;
 }
  
 var autoSlide = function() {
-  var interval;
   this.time = 3;
   this.slide = function () {
     i++;
@@ -34,4 +33,4 @@ var autoSlide = function() {
   a.start();
   document.querySelector("#previous").onclick = function (){i=((i-1<0)? backgrounds.length-1 : i-1);changeImg(); a.reset();};
   document.querySelector("#next").onclick = function (){i++;changeImg(); a.reset();};
-};
+});
